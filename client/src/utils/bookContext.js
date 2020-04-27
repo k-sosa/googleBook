@@ -1,8 +1,7 @@
 import React, {createContext} from 'react'
 
 const BookContext = createContext({
-    results:[],
-    search: ""
+    results:[] 
 })
 
 export default BookContext;

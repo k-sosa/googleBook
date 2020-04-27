@@ -1,17 +1,28 @@
 import React, { useState, useEffect } from 'react'
 import SearchForm from '../components/searchForm'
-import ListGroup from '../components/ListGroup'
+import Card from '../components/card'
+import Jumbotron from '../components/jumbotron'
+import { Container, Row, Col } from 'reactstrap';
 import Api from '../utils/api';
+import { set } from 'mongoose';
 export default function Search() {
     const [bookState, setBookState] = useState({
-        results: [],
-        search: ""
+        results: []
+       
     })
 
     const [refresh, setRefresh] = useState(false)
 
+  const [search, setSearch] = useState("")
+
     useEffect(() => {
-        loadApiData("the hunger games")
+
+        if(refresh){
+            loadApiData(bookState.search)
+
+        }
+       
+        
 
     }, [refresh])
 
@@ -27,10 +38,11 @@ export default function Search() {
     return (
 
 
-        <div>
+        <Container>
+            <Jumbotron />
             <SearchForm />
-            <ListGroup />
-        </div>
+            <Card />
+        </Container>
 
     )
 }
