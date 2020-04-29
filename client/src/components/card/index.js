@@ -32,7 +32,7 @@ const Example = (props) => {
             </Col>
 
      </Row>
-    <Row className="mt-5">
+    <Row>
         <Col sm="2">
         <CardImg top width="100%" src="http://books.google.com/books/content?id=_zSzAwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api" alt="Card image cap" />
 
